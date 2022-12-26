@@ -1,0 +1,137 @@
+.cabecalho {
+    background-color: var(--cor-de-fundo-menu);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.cabecalho__container {
+    display: flex;
+    align-items: center;
+}
+
+.cabecalho__container-img {
+    padding: 1em;
+}
+
+.cabecalho__menu {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.menu-lista {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vw;
+}
+
+.cabecalho__container-botao:checked ~.menu-lista {
+    display: block;
+}
+
+.cabecalho__container-botao:checked ~.cabecalho__label >.cabecalho__menu {
+    background-image: url("../img/MenuAberto.png");
+    background-color: var(--cor-h2-cards);
+}
+
+.menu-lista__titulo, .menu-lista__item{
+    background-color: var(--cor-de-fundo-menu);
+    padding: 1em;
+}
+
+.menu-lista__titulo {
+    color: var(--cor-de-titulos);
+    font-weight: 700;
+}
+
+.menu-lista__link {
+    background: var(--cor-texto-principal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
+
+.cabecalho__titulo, .opcoes, .cabecalho__container-botao, .cabecalho__container-texto {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    
+    .cabecalho__titulo, .cabecalho__titulo--negrito {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+        margin-top: 5px;
+    }
+    .cabecalho__titulo {
+        font-weight: 400;
+        display: block;
+    }
+    .cabecalho__titulo--negrito {
+        font-weight: 700;
+    }
+    .opcoes {
+        display: flex;
+        gap: 30px;
+    }
+    .opcoes__item {
+        text-transform: uppercase;
+        padding: 2em;
+    }
+    .opcoes__link {
+        text-decoration: none;
+        color: var(--menu-opcoes);
+    }
+    .cabecalho__container-transparencia {
+        display: none;
+    }
+    .cabecalho__menu {
+        display: none;
+    }
+    .opcoes__menu {
+        display: none;
+    }
+    .opcoes__menu:checked ~ .menu-lista {
+        display: block;
+        width: auto;
+    }
+    .opcoes__menu:checked ~.opcoes__label >.opcoes__item {
+        background-color: var(--cor-h2-cards);
+        color: var(--cor-de-fundo-menu);
+    }
+    .menu-lista__item:hover {
+        background: var(--cor-texto-principal);    
+    }
+    .menu-lista__item:hover >.menu-lista__link {
+        -webkit-text-fill-color: var(--cor-de-fundo-menu);
+        text-decoration: none;
+    }
+}
+
+
+@media screen and (min-width: 1728px) {
+    .cabecalho__container-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--menu-opcoes);
+    }
+    .cabecalho {
+        padding: 0 2.5em;
+    }
+    .opcoes {
+        margin-left: 3em;
+        margin-right: auto;
+    }
+    .cabecalho__container-texto {
+        display: block;
+    }
+}
+
+
